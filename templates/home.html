@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main Interface</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 60px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 40px;
+    }
+
+    .menu-button {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+      color: black;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+    }
+
+    .menu-button:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .yellow { background-color: #fff1a8; }  /* Soft yellow */
+    .red    { background-color: #ffb3b3; }  /* Soft red */
+    .blue   { background-color: #a8f0ff; }  /* Soft blue */
+  </style>
+</head>
+<body>
+
+  <h1>LOW RISK</h1>
+
+  <div class="button-container">
+    <a href="/eligibility" class="menu-button yellow">ELIGIBILITY<br>CALCULATOR</a>
+    <a href="/risk" class="menu-button red">RISK<br>PROFILE</a>
+    <a href="/feedback" class="menu-button blue">FEEDBACK</a>
+  </div>
+
+</body>
+</html>

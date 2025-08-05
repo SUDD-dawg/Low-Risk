@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Risk Profile</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='risk.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>RISK PROFILE</h1>
+    <form method="POST" action="/risk-profile">
+      <div class="form-box">
+        <label for="debt">Debt = </label>
+        <input type="number" name="debt" id="debt" required><br><br>
+
+        <label for="income">Income = </label>
+        <input type="number" name="income" id="income" required><br><br>
+
+        <input type="submit" value="CALCULATE">
+      </div>
+    </form>
+    
+    <a href="/" class="home-link">
+      <img src="{{ url_for('static', filename='home-icon.png') }}" alt="Home" class="home-icon">
+    </a>
+  </div>
+</body>
+</html>

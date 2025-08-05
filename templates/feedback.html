@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='feedback.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>FEEDBACK</h1>
+
+        <form action="/feedback" method="POST" class="feedback-form">
+            <fieldset>
+                <legend>Overall experience</legend>
+                <label><input type="radio" name="overall_exp" value="Excellent" required> Excellent</label>
+                <label><input type="radio" name="overall_exp" value="Good"> Good</label>
+                <label><input type="radio" name="overall_exp" value="Average"> Average</label>
+                <label><input type="radio" name="overall_exp" value="Poor"> Poor</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>How helpful?</legend>
+                <label><input type="radio" name="helpful_rating" value="Very" required> Very</label>
+                <label><input type="radio" name="helpful_rating" value="Good"> Good</label>
+            </fieldset>
+
+            <label for="suggestions">Any suggestions for improvement?</label><br>
+            <textarea name="suggestions" id="suggestions" rows="4" required></textarea>
+
+            <input type="submit" value="Submit Feedback">
+        </form>
+
+        <a href="/" class="home-link">
+            <img src="{{ url_for('static', filename='home-icon.png') }}" alt="Home" class="home-icon">
+        </a>
+    </div>
+</body>
+</html>

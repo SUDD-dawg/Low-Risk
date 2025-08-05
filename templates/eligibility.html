@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eligibility</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='eligibility.css') }}">
+</head>
+<body>
+  <h1>ELIGIBILITY</h1>
+  
+  <div class="form-box">
+    <form method="POST" action="/eligibility">
+      <label>Monthly income = <input type="number" name="income" required></label><br>
+      <label>Loan required = <input type="number" name="loan" required></label><br>
+      <label>Deposit available = <input type="number" name="deposit" required></label><br>
+      <label>Monthly expenses = <input type="number" name="expenses" required></label><br>
+      
+      <button type="submit">Check Eligibility</button>
+    </form>
+  </div>
+
+  <a href="/" class="home-link">
+    <img src="{{ url_for('static', filename='home-icon.png') }}" alt="Home" class="home-icon">
+  </a>
+</body>
+</html>
+
