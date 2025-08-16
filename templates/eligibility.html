@@ -15,13 +15,30 @@
       <label>Deposit available = <input type="number" name="deposit" required></label><br>
       <label>Monthly expenses = <input type="number" name="expenses" required></label><br>
       
-      <button type="submit">Check Eligibility</button>
+      <button type="submit">Calculate</button>
     </form>
+
+    {% if eligible is not none %}
+    <div class="result-box">
+      {% if eligible %}
+        <div class="eligible">
+          <h2>✓ ELIGIBLE</h2>
+          <p>Congratulations! You are eligible for the loan.</p>
+          <p>Maximum loan amount: ${{ max_loan }}</p>
+        </div>
+      {% else %}
+        <div class="not-eligible">
+          <h2>✗ NOT ELIGIBLE</h2>
+          <p>Sorry, you are not eligible for the loan at this time.</p>
+          <p>Maximum loan amount: ${{ max_loan }}</p>
+        </div>
+      {% endif %}
+    </div>
+    {% endif %}
   </div>
 
   <a href="/" class="home-link">
-    <img src="{{ url_for('static', filename='home-icon.png') }}" alt="Home" class="home-icon">
+    <img src="{{ url_for('static', filename='25694.png') }}" alt="Home" class="home-icon">
   </a>
 </body>
 </html>
-

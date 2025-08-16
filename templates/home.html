@@ -50,6 +50,18 @@
     .yellow { background-color: #fff1a8; }  /* Soft yellow */
     .red    { background-color: #ffb3b3; }  /* Soft red */
     .blue   { background-color: #a8f0ff; }  /* Soft blue */
+
+    /* Home icon styling */
+    .home-link {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+    }
+
+    .home-icon {
+      width: 30px;
+      height: 30px;
+    }
   </style>
 </head>
 <body>
@@ -61,6 +73,10 @@
     <a href="/risk" class="menu-button red">RISK<br>PROFILE</a>
     <a href="/feedback" class="menu-button blue">FEEDBACK</a>
   </div>
+
+  <a href="/" class="home-link">
+    <img src="{{ url_for('static', filename='25694.png') }}" alt="Home" class="home-icon">
+  </a>
 
 </body>
 </html>

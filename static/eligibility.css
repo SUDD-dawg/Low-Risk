@@ -58,3 +58,33 @@ button:hover {
   width: 30px;
   height: 30px;
 }
+
+.result-box {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+}
+
+.eligible {
+  background-color: #d4edda;
+  border: 2px solid #28a745;
+  color: #155724;
+}
+
+.not-eligible {
+  background-color: #f8d7da;
+  border: 2px solid #dc3545;
+  color: #721c24;
+}
+
+.result-box h2 {
+  margin-top: 0;
+  font-size: 32px;
+}
+
+.result-box p {
+  font-size: 18px;
+  margin: 10px 0;
+}
