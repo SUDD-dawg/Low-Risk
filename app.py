@@ -28,7 +28,7 @@ def eligibility():
                              eligible=is_eligible, 
                              max_loan=round(max_loan, 2))
     
-    return render_template('eligibility.html')
+    return render_template('eligibility.html', eligible=None)
 
 # Risk assessment page route - GET for displaying form, POST for processing
 @app.route('/risk', methods=['GET', 'POST'])
