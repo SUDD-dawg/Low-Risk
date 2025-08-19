@@ -1,6 +1,20 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
+from models import db, Feedback, FeedbackService
+import os
 
 app = Flask(__name__)
+
+# Database configuration
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'feedback.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Initialize database
+db.init_app(app)
+
+# Create tables
+with app.app_context():
+    db.create_all()
 
 # Home page route
 @app.route('/')
@@ -64,8 +78,20 @@ def feedback():
         helpful_rating = request.form.get('helpful_rating')
         suggestions = request.form.get('suggestions')
         
-        # Here you would typically save to database
-        # For now, we'll just acknowledge submission
+        # Save feedback to database
+        feedback = FeedbackService.create_feedback(overall_exp, helpful_rating, suggestions)
+        
+        # Simple categorization based on ratings
+        if overall_exp in ['Excellent', 'Good'] and helpful_rating in ['Very', 'Good']:
+            category = 'good'
+            confidence_score = 0.9
+        else:
+            category = 'constructive'
+            confidence_score = 0.8
+            
+        # Update feedback with category
+        FeedbackService.update_feedback_category(feedback.id, category, confidence_score)
+        
         return render_template('feedback.html', 
                              submitted=True,
                              overall_exp=overall_exp,
@@ -73,6 +99,21 @@ def feedback():
                              suggestions=suggestions)
     
     return render_template('feedback.html')
+
+# Admin Dashboard route
+@app.route('/dashboard')
+def dashboard():
+    # Get all feedback categorized
+    all_feedback = FeedbackService.get_all_feedback()
+    
+    # Separate into positive and constructive feedback
+    positive_feedback = [f for f in all_feedback if f.category == 'good']
+    constructive_feedback = [f for f in all_feedback if f.category == 'constructive']
+    
+    return render_template('dashboard.html', 
+                         positive_feedback=positive_feedback,
+                         constructive_feedback=constructive_feedback,
+                         total_feedback=len(all_feedback))
 
 # API endpoint for eligibility check (optional)
 @app.route('/api/eligibility', methods=['POST'])
