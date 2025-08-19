@@ -69,3 +69,41 @@ input[type="submit"]:hover {
   width: 30px;
   height: 30px;
 }
+
+/* Results display styling */
+.result-box {
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: 30px;
+  margin-top: 30px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.result-box h2 {
+  margin-top: 0;
+  color: #000;
+  font-size: 28px;
+}
+
+.result-box p {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.risk-low {
+  color: #008000;
+  font-weight: bold;
+}
+
+.risk-medium {
+  color: #ff8c00;
+  font-weight: bold;
+}
+
+.risk-high {
+  color: #ff0000;
+  font-weight: bold;
+}

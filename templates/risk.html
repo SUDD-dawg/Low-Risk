@@ -19,6 +19,14 @@
         <input type="submit" value="CALCULATE">
       </div>
     </form>
+
+    {% if risk_level %}
+    <div class="result-box">
+      <h2>Results</h2>
+      <p><strong>Debt-to-Income Ratio:</strong> {{ debt_to_income }}%</p>
+      <p><strong>Risk Level:</strong> <span class="risk-{{ risk_level.lower().split()[0] }}">{{ risk_level }}</span></p>
+    </div>
+    {% endif %}
     
     <a href="/" class="home-link">
       <img src="{{ url_for('static', filename='25694.png') }}" alt="Home" class="home-icon">
