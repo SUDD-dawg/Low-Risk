@@ -19,12 +19,10 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--gradient-bg);
-    background-image: 
-        var(--gradient-bg),
-        var(--money-pattern);
-    background-size: 400% 400%, 50px 50px;
-    animation: gradientShift 15s ease infinite;
+    background: #f8f9fa;
+    background-image: var(--money-pattern);
+    background-size: 50px 50px;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
