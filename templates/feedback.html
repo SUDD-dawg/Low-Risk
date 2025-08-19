@@ -34,5 +34,52 @@
             <img src="{{ url_for('static', filename='25694.png') }}" alt="Home" class="home-icon">
         </a>
     </div>
+
+    <!-- Thank You Popup Modal -->
+    {% if submitted %}
+    <div id="thankYouModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="thank-you-message">
+                <h2>Thank You!</h2>
+                <p>Your feedback has been submitted successfully.</p>
+                <p>We appreciate your input and will use it to improve our service.</p>
+                <button class="close-button" onclick="closeThankYouModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show the modal when page loads (after successful submission)
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('thankYouModal');
+            modal.style.display = 'flex';
+        });
+
+        // Close modal function
+        function closeThankYouModal() {
+            const modal = document.getElementById('thankYouModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking the X button
+        document.querySelector('.close-btn').addEventListener('click', closeThankYouModal);
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('thankYouModal');
+            if (event.target === modal) {
+                closeThankYouModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeThankYouModal();
+            }
+        });
+    </script>
+    {% endif %}
 </body>
 </html>
