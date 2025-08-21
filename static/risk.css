@@ -21,7 +21,7 @@ h1 {
   margin-bottom: 40px;
 }
 
-.form-box {
+.formBox {
   background-color: #ffcccc; /* lighter pink inner box */
   padding: 40px;
   border: 2px solid #000;
@@ -59,19 +59,19 @@ input[type="submit"]:hover {
 }
 
 /* Home icon styling */
-.home-link {
+.homeLink {
   position: absolute;
   bottom: 20px;
   right: 30px;
 }
 
-.home-icon {
+.homeIcon {
   width: 30px;
   height: 30px;
 }
 
 /* Results display styling */
-.result-box {
+.resultBox {
   background-color: #fff;
   border: 2px solid #000;
   padding: 30px;
@@ -81,29 +81,29 @@ input[type="submit"]:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.result-box h2 {
+.resultBox h2 {
   margin-top: 0;
   color: #000;
   font-size: 28px;
 }
 
-.result-box p {
+.resultBox p {
   font-size: 18px;
   margin: 10px 0;
   font-weight: bold;
 }
 
-.risk-low {
+.riskLow {
   color: #008000;
   font-weight: bold;
 }
 
-.risk-medium {
+.riskMedium {
   color: #ff8c00;
   font-weight: bold;
 }
 
-.risk-high {
+.riskHigh {
   color: #ff0000;
   font-weight: bold;
 }

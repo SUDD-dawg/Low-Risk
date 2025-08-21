@@ -22,7 +22,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-.feedback-form {
+.feedbackForm {
   background-color: #fff;
   padding: 30px;
   border: 2px solid #000;
@@ -68,19 +68,19 @@ input[type="submit"]:hover {
 }
 
 /* Home icon styling */
-.home-link {
+.homeLink {
   position: absolute;
   bottom: 20px;
   right: 30px;
 }
 
-.home-icon {
+.homeIcon {
   width: 30px;
   height: 30px;
 }
 
 /* Thank You Popup Modal Styles */
-.modal-overlay {
+.modalOverlay {
   display: none;
   position: fixed;
   top: 0;
@@ -94,7 +94,7 @@ input[type="submit"]:hover {
   animation: fadeIn 0.3s ease-in;
 }
 
-.modal-content {
+.modalContent {
   background-color: #fff;
   padding: 40px;
   border-radius: 10px;
@@ -106,7 +106,7 @@ input[type="submit"]:hover {
   animation: slideIn 0.3s ease-out;
 }
 
-.close-btn {
+.closeBtn {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -117,23 +117,23 @@ input[type="submit"]:hover {
   transition: color 0.3s;
 }
 
-.close-btn:hover {
+.closeBtn:hover {
   color: #000;
 }
 
-.thank-you-message h2 {
+.thankYouMessage h2 {
   color: #28a745;
   margin-bottom: 15px;
   font-size: 28px;
 }
 
-.thank-you-message p {
+.thankYouMessage p {
   margin-bottom: 10px;
   color: #333;
   line-height: 1.5;
 }
 
-.close-button {
+.closeButton {
   margin-top: 20px;
   padding: 10px 30px;
   background-color: #28a745;
@@ -145,7 +145,7 @@ input[type="submit"]:hover {
   transition: background-color 0.3s;
 }
 
-.close-button:hover {
+.closeButton:hover {
   background-color: #218838;
 }
 

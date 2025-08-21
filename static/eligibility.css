@@ -14,7 +14,7 @@ h1 {
   margin-bottom: 40px;
 }
 
-.form-box {
+.formBox {
   background-color: #eaf6f9;
   padding: 30px;
   border: 2px solid black;
@@ -23,12 +23,12 @@ h1 {
   font-size: 18px;
 }
 
-.form-box label {
+.formBox label {
   display: block;
   margin: 15px 0;
 }
 
-.form-box input {
+.formBox input {
   float: right;
   width: 150px;
 }
@@ -48,18 +48,18 @@ button:hover {
   background-color: #005d99;
 }
 
-.home-link {
+.homeLink {
   position: fixed;
   bottom: 20px;
   right: 20px;
 }
 
-.home-icon {
+.homeIcon {
   width: 30px;
   height: 30px;
 }
 
-.result-box {
+.resultBox {
   margin-top: 30px;
   padding: 20px;
   border-radius: 10px;
@@ -73,18 +73,18 @@ button:hover {
   color: #155724;
 }
 
-.not-eligible {
+.notEligible {
   background-color: #f8d7da;
   border: 2px solid #dc3545;
   color: #721c24;
 }
 
-.result-box h2 {
+.resultBox h2 {
   margin-top: 0;
   font-size: 32px;
 }
 
-.result-box p {
+.resultBox p {
   font-size: 18px;
   margin: 10px 0;
 }
