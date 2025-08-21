@@ -3,48 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>Feedback</title>
+    <!-- Sets page title for feedback form -->
     <link rel="stylesheet" href="{{ url_for('static', filename='feedback.css') }}">
+    <!-- Links to external CSS stylesheet -->
 </head>
 <body>
     <div class="container">
+        <!-- Main container for feedback page -->
         <h1>FEEDBACK</h1>
-
+        <!-- Displays main heading -->
+        
         <form action="/feedback" method="POST" class="feedback-form">
+            <!-- Sets form to POST data to feedback endpoint -->
             <fieldset>
+                <!-- Groups related form elements -->
                 <legend>Overall experience</legend>
+                <!-- Provides title for experience rating -->
                 <label><input type="radio" name="overall_exp" value="Excellent" required> Excellent</label>
+                <!-- Radio button for excellent rating -->
                 <label><input type="radio" name="overall_exp" value="Good"> Good</label>
+                <!-- Radio button for good rating -->
                 <label><input type="radio" name="overall_exp" value="Average"> Average</label>
+                <!-- Radio button for average rating -->
                 <label><input type="radio" name="overall_exp" value="Poor"> Poor</label>
+                <!-- Radio button for poor rating -->
             </fieldset>
 
             <fieldset>
+                <!-- Groups related form elements -->
                 <legend>How helpful?</legend>
+                <!-- Provides title for helpfulness rating -->
                 <label><input type="radio" name="helpful_rating" value="Very" required> Very</label>
+                <!-- Radio button for very helpful -->
                 <label><input type="radio" name="helpful_rating" value="Good"> Good</label>
+                <!-- Radio button for good helpfulness -->
             </fieldset>
 
             <label for="suggestions">Any suggestions for improvement?</label><br>
+            <!-- Label for suggestions textarea -->
             <textarea name="suggestions" id="suggestions" rows="4" required></textarea>
+            <!-- Text area for user suggestions -->
 
             <input type="submit" value="Submit Feedback">
+            <!-- Submit button for the form -->
         </form>
 
         <a href="/" class="home-link">
+            <!-- Creates link back to home page -->
             <img src="{{ url_for('static', filename='25694.png') }}" alt="Home" class="home-icon">
+            <!-- Home icon image for navigation -->
         </a>
     </div>
 
     <!-- Thank You Popup Modal -->
     {% if submitted %}
+    <!-- Checks if feedback was successfully submitted -->
     <div id="thankYouModal" class="modal-overlay">
+        <!-- Creates modal overlay container -->
         <div class="modal-content">
+            <!-- Creates modal content container -->
             <span class="close-btn">&times;</span>
+            <!-- Close button for modal -->
             <div class="thank-you-message">
+                <!-- Container for thank you message -->
                 <h2>Thank You!</h2>
+                <!-- Thank you heading -->
                 <p>Your feedback has been submitted successfully.</p>
+                <!-- Success message -->
                 <p>We appreciate your input and will use it to improve our service.</p>
+                <!-- Additional appreciation message -->
                 <button class="close-button" onclick="closeThankYouModal()">Close</button>
+                <!-- Close button inside modal -->
             </div>
         </div>
     </div>
@@ -55,16 +84,13 @@
             const modal = document.getElementById('thankYouModal');
             modal.style.display = 'flex';
         });
-
         // Close modal function
         function closeThankYouModal() {
             const modal = document.getElementById('thankYouModal');
             modal.style.display = 'none';
         }
-
         // Close modal when clicking the X button
         document.querySelector('.close-btn').addEventListener('click', closeThankYouModal);
-
         // Close modal when clicking outside the modal content
         window.addEventListener('click', function(event) {
             const modal = document.getElementById('thankYouModal');
@@ -72,7 +98,6 @@
                 closeThankYouModal();
             }
         });
-
         // Close modal with Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {

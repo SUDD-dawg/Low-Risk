@@ -3,34 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <title>Eligibility</title>
+  <!-- Sets page title for eligibility calculator -->
   <link rel="stylesheet" href="{{ url_for('static', filename='eligibility.css') }}">
+  <!-- Links to external CSS stylesheet -->
 </head>
 <body>
   <h1>ELIGIBILITY</h1>
+  <!-- Displays main heading for the page -->
   
   <div class="form-box">
+    <!-- Creates container for form and results -->
     <form method="POST" action="/eligibility">
+      <!-- Sets form to POST data to eligibility endpoint -->
       <label>Monthly income = <input type="number" name="income" required></label><br>
+      <!-- Input field for monthly income -->
       <label>Loan required = <input type="number" name="loan" required></label><br>
+      <!-- Input field for desired loan amount -->
       <label>Deposit available = <input type="number" name="deposit" required></label><br>
+      <!-- Input field for available deposit -->
       <label>Monthly expenses = <input type="number" name="expenses" required></label><br>
+      <!-- Input field for monthly expenses -->
       
       <button type="submit">Calculate</button>
+      <!-- Submit button to trigger calculation -->
     </form>
 
     {% if eligible is not none %}
+    <!-- Checks if eligibility result exists -->
     <div class="result-box">
+      <!-- Container for displaying results -->
       {% if eligible %}
+      <!-- Checks if user is eligible -->
         <div class="eligible">
+          <!-- Styles eligible result container -->
           <h2>✓ ELIGIBLE</h2>
+          <!-- Shows eligible status with checkmark -->
           <p>Congratulations! You are eligible for the loan.</p>
+          <!-- Success message for eligible users -->
           <p>Maximum loan amount: ${{ max_loan }}</p>
+          <!-- Displays calculated maximum loan amount -->
         </div>
       {% else %}
+      <!-- Handles not eligible case -->
         <div class="not-eligible">
+          <!-- Styles not eligible result container -->
           <h2>✗ NOT ELIGIBLE</h2>
+          <!-- Shows not eligible status with X mark -->
           <p>Sorry, you are not eligible for the loan at this time.</p>
+          <!-- Message for not eligible users -->
           <p>Maximum loan amount: ${{ max_loan }}</p>
+          <!-- Shows what they could potentially get -->
         </div>
       {% endif %}
     </div>
@@ -38,7 +60,9 @@
   </div>
 
   <a href="/" class="home-link">
+    <!-- Creates link back to home page -->
     <img src="{{ url_for('static', filename='25694.png') }}" alt="Home" class="home-icon">
+    <!-- Home icon image for navigation -->
   </a>
 </body>
 </html>
