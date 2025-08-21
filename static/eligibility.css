@@ -1,90 +1,138 @@
 body {
+  /* Light blue background for eligibility page */
   background-color: #a8f0ff;
+  /* Clean Arial font for readability */
   font-family: Arial, sans-serif;
+  /* Flex layout centers content vertically */
   display: flex;
+  /* Column direction stacks elements */
   flex-direction: column;
+  /* Center align all content */
   align-items: center;
+  /* Top padding for spacing */
   padding-top: 50px;
+  /* Remove default margins */
   margin: 0;
 }
 
 h1 {
+  /* Large heading for page title */
   font-size: 48px;
+  /* Bold weight for emphasis */
   font-weight: bold;
+  /* Space below heading */
   margin-bottom: 40px;
 }
 
 .formBox {
+  /* Light blue form background */
   background-color: #eaf6f9;
+  /* Internal padding for form */
   padding: 30px;
+  /* Black border for definition */
   border: 2px solid black;
+  /* Fixed width for consistency */
   width: 400px;
+  /* Left align text */
   text-align: left;
+  /* Readable font size */
   font-size: 18px;
 }
 
 .formBox label {
+  /* Block display for labels */
   display: block;
+  /* Vertical spacing between labels */
   margin: 15px 0;
 }
 
 .formBox input {
+  /* Float inputs to right side */
   float: right;
+  /* Standard input width */
   width: 150px;
 }
 
 button {
+  /* Block display for centering */
   display: block;
+  /* Center button with auto margins */
   margin: 30px auto 0;
+  /* Comfortable button padding */
   padding: 10px 20px;
+  /* Readable button text */
   font-size: 16px;
+  /* Blue button background */
   background-color: #007acc;
+  /* White text for contrast */
   color: white;
+  /* Remove default border */
   border: none;
+  /* Pointer cursor on hover */
   cursor: pointer;
 }
 
 button:hover {
+  /* Darker blue on hover */
   background-color: #005d99;
 }
 
 .homeLink {
+  /* Fixed position for home link */
   position: fixed;
+  /* Bottom right corner */
   bottom: 20px;
   right: 20px;
 }
 
 .homeIcon {
+  /* Standard icon size */
   width: 30px;
+  /* Square aspect ratio */
   height: 30px;
 }
 
 .resultBox {
+  /* Top margin for spacing */
   margin-top: 30px;
+  /* Internal padding */
   padding: 20px;
+  /* Rounded corners */
   border-radius: 10px;
+  /* Center text alignment */
   text-align: center;
+  /* Maximum width limit */
   max-width: 500px;
 }
 
 .eligible {
+  /* Green background for success */
   background-color: #d4edda;
+  /* Green border accent */
   border: 2px solid #28a745;
+  /* Dark green text */
   color: #155724;
 }
 
 .notEligible {
+  /* Red background for failure */
   background-color: #f8d7da;
+  /* Red border accent */
   border: 2px solid #dc3545;
+  /* Dark red text */
   color: #721c24;
 }
 
 .resultBox h2 {
+  /* Remove top margin */
   margin-top: 0;
+  /* Large result heading */
   font-size: 32px;
 }
 
 .resultBox p {
+  /* Readable paragraph size */
   font-size: 18px;
+  /* Vertical spacing */
   margin: 10px 0;
 }

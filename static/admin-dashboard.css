@@ -1,0 +1,232 @@
+/* Admin Dashboard Styles - Comprehensive CSS with informative comments */
+
+.dashboard-container {
+  /* Maximum width for large screens */
+  max-width: 1200px;
+  /* Center container horizontally */
+  margin: 0 auto;
+  /* Internal padding for spacing */
+  padding: 20px;
+  /* Clean Arial font family */
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-header {
+  /* Center align header content */
+  text-align: center;
+  /* Bottom margin for spacing */
+  margin-bottom: 40px;
+  /* Internal padding */
+  padding: 20px;
+  /* Purple gradient background */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* White text on dark background */
+  color: white;
+  /* Rounded corners */
+  border-radius: 10px;
+}
+
+.stats-cards {
+  /* CSS grid layout for responsive cards */
+  display: grid;
+  /* Auto-fit columns with minimum width */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Gap between grid items */
+  gap: 20px;
+  /* Bottom margin for spacing */
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  /* White background for cards */
+  background: white;
+  /* Internal padding */
+  padding: 20px;
+  /* Rounded corners */
+  border-radius: 10px;
+  /* Subtle shadow effect */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  /* Center text alignment */
+  text-align: center;
+}
+
+.stat-number {
+  /* Large statistic numbers */
+  font-size: 2.5em;
+  /* Bold weight for emphasis */
+  font-weight: bold;
+  /* Purple color theme */
+  color: #667eea;
+}
+
+.stat-label {
+  /* Gray color for labels */
+  color: #666;
+  /* Small top margin */
+  margin-top: 5px;
+}
+
+.feedback-sections {
+  /* CSS grid for two-column layout */
+  display: grid;
+  /* Equal width columns */
+  grid-template-columns: 1fr 1fr;
+  /* Gap between sections */
+  gap: 30px;
+  /* Top margin for spacing */
+  margin-top: 30px;
+}
+
+.section-card {
+  /* White background for cards */
+  background: white;
+  /* Rounded corners */
+  border-radius: 10px;
+  /* Internal padding */
+  padding: 20px;
+  /* Subtle shadow effect */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.section-header {
+  /* Internal padding */
+  padding: 15px;
+  /* Negative margins for full width */
+  margin: -20px -20px 20px -20px;
+  /* Rounded top corners only */
+  border-radius: 10px 10px 0 0;
+  /* Bold font weight */
+  font-weight: bold;
+  /* Larger font size */
+  font-size: 1.2em;
+  /* Center text alignment */
+  text-align: center;
+}
+
+.positive-section .section-header {
+  /* Green background for positive */
+  background: #4CAF50;
+  /* White text on green */
+  color: white;
+}
+
+.constructive-section .section-header {
+  /* Orange background for constructive */
+  background: #FF9800;
+  /* White text on orange */
+  color: white;
+}
+
+.feedback-item {
+  /* Left border accent */
+  border-left: 4px solid #ddd;
+  /* Internal padding */
+  padding: 15px;
+  /* Bottom margin for spacing */
+  margin-bottom: 15px;
+  /* Light gray background */
+  background: #f9f9f9;
+  /* Rounded corners */
+  border-radius: 5px;
+}
+
+.positive-section .feedback-item {
+  /* Green border for positive items */
+  border-left-color: #4CAF50;
+}
+
+.constructive-section .feedback-item {
+  /* Orange border for constructive items */
+  border-left-color: #FF9800;
+}
+
+.feedback-meta {
+  /* Smaller font for metadata */
+  font-size: 0.9em;
+  /* Gray color for metadata */
+  color: #666;
+  /* Bottom margin for spacing */
+  margin-bottom: 10px;
+}
+
+.feedback-content {
+  /* Comfortable line height */
+  line-height: 1.5;
+}
+
+.empty-state {
+  /* Center text alignment */
+  text-align: center;
+  /* Gray color for empty state */
+  color: #666;
+  /* Italic style for emphasis */
+  font-style: italic;
+  /* Large padding */
+  padding: 40px;
+}
+
+.home-link {
+  /* Fixed position for home link */
+  position: fixed;
+  /* Bottom right corner */
+  bottom: 20px;
+  right: 20px;
+  /* Remove underline */
+  text-decoration: none;
+  /* Purple color theme */
+  color: #667eea;
+  /* Bold font weight */
+  font-weight: bold;
+  /* Ensure on top layer */
+  z-index: 1000;
+  /* White background */
+  background: white;
+  /* Small padding */
+  padding: 10px;
+  /* Circular shape */
+  border-radius: 50%;
+  /* Shadow for depth */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  /* Smooth hover transition */
+  transition: transform 0.3s ease;
+}
+
+.home-link:hover {
+  /* Scale up on hover */
+  transform: scale(1.1);
+}
+
+.refresh-btn {
+  /* Absolute positioning */
+  position: absolute;
+  /* Top right corner */
+  top: 20px;
+  right: 20px;
+  /* Purple background */
+  background: #667eea;
+  /* White text */
+  color: white;
+  /* Button padding */
+  padding: 10px 20px;
+  /* Remove border */
+  border: none;
+  /* Rounded corners */
+  border-radius: 5px;
+  /* Pointer cursor */
+  cursor: pointer;
+  /* Remove underline */
+  text-decoration: none;
+}
+
+.refresh-btn:hover {
+  /* Darker purple on hover */
+  background: #5a6fd8;
+}
+
+@media (max-width: 768px) {
+  /* Responsive breakpoint for mobile */
+  .feedback-sections {
+    /* Single column on small screens */
+    grid-template-columns: 1fr;
+  }
+}
