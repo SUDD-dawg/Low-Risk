@@ -90,27 +90,57 @@ def logout():
 def home():
     return render_template('home.html')
 
-# Eligibility page route - GET for displaying form, POST for processing
+# Enhanced Eligibility page route - GET for displaying form, POST for processing
 @app.route('/eligibility', methods=['GET', 'POST'])
 def eligibility():
     if request.method == 'POST':
-        # Get form data
-        income = float(request.form.get('income', 0))
-        loan = float(request.form.get('loan', 0))
-        deposit = float(request.form.get('deposit', 0))
-        expenses = float(request.form.get('expenses', 0))
-        
-        # Simple eligibility calculation
-        disposable_income = income - expenses
-        max_loan = disposable_income * 12 * 0.3  # 30% of annual disposable income
-        
-        is_eligible = loan <= max_loan and deposit >= loan * 0.1
-        
-        return render_template('eligibility.html', 
-                             eligible=is_eligible, 
-                             max_loan=round(max_loan, 2))
+        try:
+            # Get form data with validation
+            income = float(request.form.get('income', 0))
+            loan = float(request.form.get('loan', 0))
+            deposit = float(request.form.get('deposit', 0))
+            expenses = float(request.form.get('expenses', 0))
+            
+            # Basic validation matching HTML form
+            if income < 0 or income > 1000000:
+                return render_template('eligibility-enhanced.html', 
+                                     eligible=None,
+                                     error="Income must be between $0 and $1,000,000")
+            if loan < 0 or loan > 5000000:
+                return render_template('eligibility-enhanced.html', 
+                                     eligible=None,
+                                     error="Loan must be between $0 and $5,000,000")
+            if deposit < 0 or deposit > 1000000:
+                return render_template('eligibility-enhanced.html', 
+                                     eligible=None,
+                                     error="Deposit must be between $0 and $1,000,000")
+            if expenses < 0 or expenses > 50000:
+                return render_template('eligibility-enhanced.html', 
+                                     eligible=None,
+                                     error="Expenses must be between $0 and $50,000")
+            
+            # Enhanced calculation
+            disposable_income = max(0, income - expenses)
+            max_monthly_payment = disposable_income * 0.3
+            max_loan = max_monthly_payment * 12 * 5  # 5 year term
+            
+            # Check eligibility
+            is_eligible = (
+                loan <= max_loan and 
+                deposit >= loan * 0.1 and
+                disposable_income > 0
+            )
+            
+            return render_template('eligibility-enhanced.html', 
+                                 eligible=is_eligible,
+                                 max_loan=round(max_loan, 2))
+            
+        except ValueError:
+            return render_template('eligibility-enhanced.html', 
+                                 eligible=None,
+                                 error="Please enter valid numbers")
     
-    return render_template('eligibility.html', eligible=None)
+    return render_template('eligibility-enhanced.html', eligible=None)
 
 # Risk assessment page route - GET for displaying form, POST for processing
 @app.route('/risk', methods=['GET', 'POST'])
@@ -194,9 +224,14 @@ def api_eligibility():
     expenses = float(data.get('expenses', 0))
     
     disposable_income = income - expenses
-    max_loan = disposable_income * 12 * 0.3
+    max_monthly_payment = disposable_income * 0.3
+    max_loan = max_monthly_payment * 12 * 5
     
-    is_eligible = loan <= max_loan and deposit >= loan * 0.1
+    is_eligible = (
+        loan <= max_loan and 
+        deposit >= loan * 0.1 and
+        disposable_income > 0
+    )
     
     return jsonify({
         'eligible': is_eligible,
