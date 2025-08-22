@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Low Risk</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home-icon.css') }}">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -105,5 +106,9 @@
             <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
         </div>
     </div>
+    
+    <a href="/" class="home-link">
+        <img src="{{ url_for('static', filename='25694.png') }}" alt="Home" class="home-icon">
+    </a>
 </body>
 </html>

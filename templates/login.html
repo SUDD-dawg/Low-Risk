@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Low Risk</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='login-vibrant.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home-icon.css') }}">
 </head>
 <body>
     <div class="money-icon">💰</div>
@@ -41,5 +42,9 @@
             <p><a href="{{ url_for('register') }}">Create your account</a></p>
         </div>
     </div>
+    
+    <a href="/" class="home-link">
+        <img src="{{ url_for('static', filename='25694.png') }}" alt="Home" class="home-icon">
+    </a>
 </body>
 </html>
