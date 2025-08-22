@@ -36,22 +36,24 @@ body {
   100% { background-position: 0% 50%, 0 0; }
 }
 
-.loginContainer {
+.login-container {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  padding: 40px;
+  padding: 60px;
   box-shadow: 
     0 8px 32px rgba(78, 205, 196, 0.2),
     0 2px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
+  min-width: 400px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
+  margin: 0 20px;
 }
 
-.loginContainer::before {
+.login-container::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -67,16 +69,16 @@ body {
   100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
-.loginContainer h2 {
+.login-container h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: var(--textDark);
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 300;
   position: relative;
 }
 
-.loginContainer h2::after {
+.login-container h2::after {
   content: '💰';
   position: absolute;
   right: -30px;
@@ -91,12 +93,12 @@ body {
   50% { transform: translateY(-50%) scale(1.1); }
 }
 
-.formGroup {
-  margin-bottom: 25px;
+.form-group {
+  margin-bottom: 30px;
   position: relative;
 }
 
-.formGroup label {
+.form-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
@@ -106,36 +108,36 @@ body {
   letter-spacing: 0.5px;
 }
 
-.formGroup input {
+.form-group input {
   width: 100%;
-  padding: 15px;
+  padding: 18px;
   border: 2px solid transparent;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: 18px;
   background: rgba(78, 205, 196, 0.05);
   transition: all 0.3s ease;
   outline: none;
 }
 
-.formGroup input:focus {
+.form-group input:focus {
   border-color: var(--primaryTeal);
   background: rgba(78, 205, 196, 0.1);
   box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
 }
 
-.formGroup input::placeholder {
+.form-group input::placeholder {
   color: var(--textLight);
   opacity: 0.7;
 }
 
 .btn {
   width: 100%;
-  padding: 15px;
+  padding: 18px;
   background: linear-gradient(135deg, var(--primaryTeal), var(--primaryCoral));
   color: white;
   border: none;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -143,6 +145,7 @@ body {
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 10px;
 }
 
 .btn::before {
@@ -169,19 +172,19 @@ body {
   transform: translateY(0);
 }
 
-.registerLink {
+.register-link {
   text-align: center;
-  margin-top: 30px;
-  padding-top: 20px;
+  margin-top: 40px;
+  padding-top: 25px;
   border-top: 1px solid rgba(78, 205, 196, 0.2);
 }
 
-.registerLink p {
+.register-link p {
   color: var(--textLight);
   margin-bottom: 10px;
 }
 
-.registerLink a {
+.register-link a {
   color: var(--primaryCoral);
   text-decoration: none;
   font-weight: 600;
@@ -189,7 +192,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.registerLink a::after {
+.register-link a::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -200,19 +203,19 @@ body {
   transition: width 0.3s ease;
 }
 
-.registerLink a:hover::after {
+.register-link a:hover::after {
   width: 100%;
 }
 
-.flashMessages {
-  margin-bottom: 25px;
+.flash-messages {
+  margin-bottom: 30px;
 }
 
-.flashMessage {
-  padding: 15px;
-  margin-bottom: 15px;
+.flash-message {
+  padding: 18px;
+  margin-bottom: 20px;
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   text-align: center;
   animation: slideIn 0.3s ease;
@@ -242,22 +245,47 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 480px) {
-  .loginContainer {
-    margin: 10px;
-    padding: 30px;
+@media (max-width: 768px) {
+  .login-container {
+    margin: 20px;
+    padding: 40px;
+    max-width: 90%;
+    min-width: unset;
   }
   
-  .loginContainer h2 {
-    font-size: 24px;
+  .login-container h2 {
+    font-size: 28px;
   }
   
-  .formGroup input {
-    padding: 12px;
+  .form-group input {
+    padding: 16px;
+    font-size: 16px;
   }
   
   .btn {
-    padding: 12px;
+    padding: 16px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    margin: 15px;
+    padding: 30px;
+  }
+  
+  .login-container h2 {
+    font-size: 24px;
+  }
+  
+  .form-group input {
+    padding: 14px;
+    font-size: 16px;
+  }
+  
+  .btn {
+    padding: 14px;
+    font-size: 16px;
   }
 }
 
